@@ -1,5 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'Utils.dart';
 
 void main() {
   runApp(
@@ -22,46 +23,37 @@ class MyApp extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Widget Practise'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Align(
-          alignment: Alignment.bottomLeft,
-          child: Container(
-            width: 200,
-            height: 500 ,
-
-            color: Colors.black,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Container(
-                  width: 100,
-                  height: 100,
-                  padding: const EdgeInsets.all(10),
-                  color: Colors.pink,
-                ),
-                Container(
-                  padding: const EdgeInsets.all(10),
-                  height: 100,
-                  width: 100,
-                  color: Colors.teal,
-                ),
-                Container(
-                  width: 100,
-                  height: 100,
-                  padding: const EdgeInsets.all(10),
-                  color: Colors.green,
-                ),
-                Container(
-                  width: 100,
-                  height: 100,
-                  padding: const EdgeInsets.all(10),
-                  color: Colors.brown,
-                ),
-              ],
+      body: Container(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.add),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: <Widget>[
+            UserAccountsDrawerHeader(
+              accountName: const Text('Basil Ayyubi'),
+              accountEmail: const Text('basilayyubi09@gmail.com'),
+              currentAccountPicture: Image.network(Cons.imageUrl),
             ),
-          ),
+            // DrawerHeader(
+            //   decoration: BoxDecoration(
+            //     color: Colors.lightGreen,
+            //   ),
+            //   child: Text('I am Drawer Header'),
+            // ),
+            const ListTile(
+              leading: Icon(Icons.person),
+              title: Text('Account'),
+              subtitle: Text('Personal'),
+              trailing: Icon(Icons.edit),
+            ),
+            const ListTile(
+              leading: Icon(Icons.email),
+              title: Text('basil@gmail.com'),
+              trailing: Icon(Icons.send),
+            )
+          ],
         ),
       ),
     );
