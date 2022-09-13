@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:widgets_practise/Styles/MyTextStyle.dart';
 
 void main() {
   runApp(
@@ -16,19 +18,88 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Awesome App'),
+        title: const Text('Widget Practise'),
         backgroundColor: Colors.black,
       ),
-      body: Container(
-        color: Colors.green[100],
-        child: const Center(
-          child: Text(
-            "Hi Flutter",
-            style: TextStyle(
-                fontSize: 20, color: Colors.black, fontWeight: FontWeight.bold),
-          ),
+      body: Center(
+          child: Container(
+        height: 100,
+        width: 100,
+        alignment: Alignment.center,
+        decoration: const BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+          gradient: LinearGradient(colors: [Colors.black, Colors.grey]),
+          shape: BoxShape.rectangle,
+          boxShadow: [
+            BoxShadow(
+              blurRadius: 2,
+              offset: Offset(3.3, 5),
+              color: Colors.grey,
+            ),
+          ],
         ),
-      ),
+        padding: const EdgeInsets.all(10),
+        child: const Text(
+          "I am a Box",
+          style: MyTextStyle.customStyle,
+        ),
+      )),
     );
   }
 }
+
+//Row with textspan
+//class MyApp extends StatelessWidget {
+//   const MyApp({Key? key}) : super(key: key);
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text('Widget Practise'),
+//         backgroundColor: Colors.black,
+//       ),
+//       body: Center(
+//         child: Row(
+//           children: [
+//             Container(
+//
+//               height: 100,
+//               width: 100,
+//               alignment: Alignment.center,
+//               decoration: const BoxDecoration(
+//                 borderRadius: BorderRadius.all(Radius.circular(10)),
+//                 gradient: LinearGradient(colors: [Colors.black, Colors.grey]),
+//                 shape: BoxShape.rectangle,
+//                 boxShadow: [
+//                   BoxShadow(
+//                     blurRadius: 2,
+//
+//                     offset: Offset(3.3, 5),
+//                     color: Colors.grey,
+//                   ),
+//                 ],
+//               ),
+//               padding: const EdgeInsets.all(10),
+//               child: const Text(
+//                 "I am a Box",
+//                 style: MyTextStyle.customStyle,
+//               ),
+//             ),
+//
+//              const Text.rich(TextSpan(
+//                  children : <TextSpan>[
+//                    TextSpan(text: "Click Here To"),
+//                    TextSpan(text: " LOGIN",style: TextStyle(color: Colors.blue , fontStyle: FontStyle.italic))
+//                  ]
+//              )
+//
+//
+//
+//             )
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
