@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       body: Container(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
       drawer: Drawer(
         child: ListView(
@@ -34,14 +34,10 @@ class MyApp extends StatelessWidget {
             UserAccountsDrawerHeader(
               accountName: const Text('Basil Ayyubi'),
               accountEmail: const Text('basilayyubi09@gmail.com'),
-              currentAccountPicture: Image.network(Cons.imageUrl),
+              currentAccountPicture:
+                  CircleAvatar(backgroundImage: NetworkImage(Cons.imageUrl),),
             ),
-            // DrawerHeader(
-            //   decoration: BoxDecoration(
-            //     color: Colors.lightGreen,
-            //   ),
-            //   child: Text('I am Drawer Header'),
-            // ),
+
             const ListTile(
               leading: Icon(Icons.person),
               title: Text('Account'),
