@@ -1,12 +1,17 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:widgets_practise/pages/HomePage.dart';
-
+import 'package:widgets_practise/pages/login_page.dart';
 
 void main() {
   runApp(
     MaterialApp(
       title: "Widget Practise",
-      home: const MyApp(),
+      home: const LoginPage(),
+      routes: {
+        "/myApp" : (context) =>  const MyApp()
+      },
       theme: ThemeData(
         primarySwatch: Colors.lightGreen,
       ),
