@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'Utils.dart';
+import 'package:widgets_practise/pages/HomePage.dart';
 
 void main() {
   runApp(
@@ -12,48 +11,6 @@ void main() {
       ),
     ),
   );
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Widget Practise'),
-      ),
-      body: Container(),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: const Icon(Icons.add),
-      ),
-      drawer: Drawer(
-        child: ListView(
-          children: <Widget>[
-            UserAccountsDrawerHeader(
-              accountName: const Text('Basil Ayyubi'),
-              accountEmail: const Text('basilayyubi09@gmail.com'),
-              currentAccountPicture:
-                  CircleAvatar(backgroundImage: NetworkImage(Cons.imageUrl),),
-            ),
-
-            const ListTile(
-              leading: Icon(Icons.person),
-              title: Text('Account'),
-              subtitle: Text('Personal'),
-              trailing: Icon(Icons.edit),
-            ),
-            const ListTile(
-              leading: Icon(Icons.email),
-              title: Text('basil@gmail.com'),
-              trailing: Icon(Icons.send),
-            )
-          ],
-        ),
-      ),
-    );
-  }
 }
 
 //Row with textspan
